@@ -1,0 +1,580 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>隐含规则 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="section2.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1/">
+            
+                <a href="../chapter1/">
+            
+                    
+                    Makefile介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../chapter1/section1.html">
+            
+                <a href="../chapter1/section1.html">
+            
+                    
+                    书写规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../chapter1/section2.html">
+            
+                <a href="../chapter1/section2.html">
+            
+                    
+                    书写命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../chapter2/">
+            
+                <a href="../chapter2/">
+            
+                    
+                    使用变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chapter2/section1.html">
+            
+                <a href="../chapter2/section1.html">
+            
+                    
+                    使用条件判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../chapter2/section2.html">
+            
+                <a href="../chapter2/section2.html">
+            
+                    
+                    使用函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    make 的运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="section1.html">
+            
+                <a href="section1.html">
+            
+                    
+                    隐含规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="section2.html">
+            
+                <a href="section2.html">
+            
+                    
+                    使用make更新函数库文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../end/">
+            
+                <a href="../end/">
+            
+                    
+                    结束
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >隐含规则</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9690;&#x542B;&#x89C4;&#x5219;">&#x9690;&#x542B;&#x89C4;&#x5219;</h1>
+<p>&#x5728;&#x6211;&#x4EEC;&#x4F7F;&#x7528;Makefile&#x65F6;&#xFF0C;&#x6709;&#x4E00;&#x4E9B;&#x6211;&#x4EEC;&#x4F1A;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#xFF0C;&#x800C;&#x4E14;&#x4F7F;&#x7528;&#x9891;&#x7387;&#x975E;&#x5E38;&#x9AD8;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x7F16;&#x8BD1;C/C++&#x7684; &#x6E90;&#x7A0B;&#x5E8F;&#x4E3A;&#x4E2D;&#x95F4;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF08;Unix&#x4E0B;&#x662F; .o &#x6587;&#x4EF6;&#xFF0C;Windows&#x4E0B;&#x662F; .obj &#x6587;&#x4EF6;&#xFF09;&#x3002;&#x672C;&#x7AE0;&#x8BB2;&#x8FF0;&#x7684;&#x5C31;&#x662F; &#x4E00;&#x4E9B;&#x5728;Makefile&#x4E2D;&#x7684;&#x201C;&#x9690;&#x542B;&#x7684;&#x201D;&#xFF0C;&#x65E9;&#x5148;&#x7EA6;&#x5B9A;&#x4E86;&#x7684;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x518D;&#x5199;&#x51FA;&#x6765;&#x7684;&#x89C4;&#x5219;&#x3002;</p>
+<p>&#x201C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x201D;&#x4E5F;&#x5C31;&#x662F;&#x4E00;&#x79CD;&#x60EF;&#x4F8B;&#xFF0C;make&#x4F1A;&#x6309;&#x7167;&#x8FD9;&#x79CD;&#x201C;&#x60EF;&#x4F8B;&#x201D;&#x5FC3;&#x7167;&#x4E0D;&#x55A7;&#x5730;&#x6765;&#x8FD0;&#x884C;&#xFF0C;&#x90A3;&#x6015;&#x6211;&#x4EEC;&#x7684;Makefile&#x4E2D;&#x6CA1;&#x6709;&#x4E66;&#x5199; &#x8FD9;&#x6837;&#x7684;&#x89C4;&#x5219;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x628A; .c &#x6587;&#x4EF6;&#x7F16;&#x8BD1;&#x6210; .o &#x6587;&#x4EF6;&#x8FD9;&#x4E00;&#x89C4;&#x5219;&#xFF0C;&#x4F60;&#x6839;&#x672C;&#x5C31;&#x4E0D;&#x7528;&#x5199;&#x51FA;&#x6765;&#xFF0C;make&#x4F1A;&#x81EA;&#x52A8; &#x63A8;&#x5BFC;&#x51FA;&#x8FD9;&#x79CD;&#x89C4;&#x5219;&#xFF0C;&#x5E76;&#x751F;&#x6210;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684; .o &#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x201C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x201D;&#x4F1A;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;&#x6211;&#x4EEC;&#x7CFB;&#x7EDF;&#x53D8;&#x91CF;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x8FD9;&#x4E9B;&#x7CFB;&#x7EDF;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x6765;&#x5B9A;&#x5236;&#x9690;&#x542B;&#x89C4;&#x5219;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x53C2;&#x6570;&#x3002; &#x5982;&#x7CFB;&#x7EDF;&#x53D8;&#x91CF; CFLAGS &#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x7F16;&#x8BD1;&#x65F6;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x201C;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x201D;&#x7684;&#x65B9;&#x5F0F;&#x5199;&#x4E0B;&#x81EA;&#x5DF1;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;&#x7528;&#x201C;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x201D;&#x6765;&#x5B9A;&#x4E49;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4F1A;&#x6709;&#x8BB8;&#x591A;&#x7684;&#x9650;&#x5236;&#x3002; &#x4F7F;&#x7528;&#x201C;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x201D;&#x4F1A;&#x66F4;&#x56DE;&#x5F97;&#x667A;&#x80FD;&#x548C;&#x6E05;&#x695A;&#xFF0C;&#x4F46;&#x201C;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x201D;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4FDD;&#x8BC1;&#x6211;&#x4EEC;Makefile&#x7684;&#x517C;&#x5BB9;&#x6027;&#x3002; &#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x4E86;&#x201C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x201D;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x5176;&#x4E3A;&#x6211;&#x4EEC;&#x66F4;&#x597D;&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x4E5F;&#x4F1A;&#x8BA9;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x4E00;&#x4E9B;&#x201C;&#x7EA6;&#x5B9A;&#x4FD7;&#x6210;&#x201D;&#x4E86;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x800C;&#x4E0D;&#x81F3;&#x4E8E; &#x4F7F;&#x5F97;&#x6211;&#x4EEC;&#x5728;&#x8FD0;&#x884C;Makefile&#x65F6;&#x51FA;&#x73B0;&#x4E00;&#x4E9B;&#x6211;&#x4EEC;&#x89C9;&#x5F97;&#x83AB;&#x540D;&#x5176;&#x5999;&#x7684;&#x4E1C;&#x897F;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x4EFB;&#x4F55;&#x4E8B;&#x7269;&#x90FD;&#x662F;&#x77DB;&#x76FE;&#x7684;&#xFF0C;&#x6C34;&#x80FD;&#x8F7D;&#x821F;&#xFF0C; &#x4EA6;&#x53EF;&#x8986;&#x821F;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x201C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x201D;&#x4E5F;&#x4F1A;&#x7ED9;&#x6211;&#x4EEC;&#x9020;&#x6210;&#x4E0D;&#x5C0F;&#x7684;&#x9EBB;&#x70E6;&#x3002;&#x53EA;&#x6709;&#x4E86;&#x89E3;&#x4E86;&#x5B83;&#xFF0C;&#x6211;&#x4EEC;&#x624D;&#x80FD;&#x66F4;&#x597D;&#x5730;&#x4F7F;&#x7528;&#x5B83;&#x3002;</p>
+<h1 id="&#x4F7F;&#x7528;&#x9690;&#x542B;&#x89C4;&#x5219;">&#x4F7F;&#x7528;&#x9690;&#x542B;&#x89C4;&#x5219;</h1>
+<p>&#x5982;&#x679C;&#x8981;&#x4F7F;&#x7528;&#x9690;&#x542B;&#x89C4;&#x5219;&#x751F;&#x6210;&#x4F60;&#x9700;&#x8981;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x4F60;&#x6240;&#x9700;&#x8981;&#x505A;&#x7684;&#x5C31;&#x662F;&#x4E0D;&#x8981;&#x5199;&#x51FA;&#x8FD9;&#x4E2A;&#x76EE;&#x6807;&#x7684;&#x89C4;&#x5219;&#x3002;&#x90A3;&#x4E48;&#xFF0C;make&#x4F1A;&#x8BD5;&#x56FE;&#x53BB; &#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4EA7;&#x751F;&#x8FD9;&#x4E2A;&#x76EE;&#x6807;&#x7684;&#x89C4;&#x5219;&#x548C;&#x547D;&#x4EE4;&#xFF0C;&#x5982;&#x679C; make&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x751F;&#x6210;&#x8FD9;&#x4E2A;&#x76EE;&#x6807;&#x7684;&#x89C4;&#x5219;&#x548C;&#x547D;&#x4EE4;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x884C;&#x4E3A; &#x5C31;&#x662F;&#x9690;&#x542B;&#x89C4;&#x5219;&#x7684;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x662F;make&#x4E8B;&#x5148;&#x7EA6;&#x5B9A;&#x597D;&#x7684;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x4E0B;&#x9762;&#x7684;&#x4E00;&#x4E2A;Makefile&#xFF1A;</p>
+<pre><code>foo : foo.o bar.o
+cc &#x2013;o foo foo.o bar.o $(CFLAGS) $(LDFLAGS)
+</code></pre><p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6CE8;&#x610F;&#x5230;&#xFF0C;&#x8FD9;&#x4E2A;Makefile&#x4E2D;&#x5E76;&#x6CA1;&#x6709;&#x5199;&#x4E0B;&#x5982;&#x4F55;&#x751F;&#x6210; foo.o &#x548C; bar.o &#x8FD9;&#x4E24;&#x76EE;&#x6807;&#x7684;&#x89C4;&#x5219;&#x548C;&#x547D;&#x4EE4;&#x3002; &#x56E0;&#x4E3A;make&#x7684;&#x201C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x201D;&#x529F;&#x80FD;&#x4F1A;&#x81EA;&#x52A8;&#x4E3A;&#x6211;&#x4EEC;&#x81EA;&#x52A8;&#x53BB;&#x63A8;&#x5BFC;&#x8FD9;&#x4E24;&#x4E2A;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x548C;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x3002;</p>
+<p>make&#x4F1A;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x201C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x201D;&#x5E93;&#x4E2D;&#x5BFB;&#x627E;&#x53EF;&#x4EE5;&#x7528;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x5982;&#x679C;&#x627E;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x4F7F;&#x7528;&#x3002;&#x5982;&#x679C;&#x627E;&#x4E0D;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x62A5;&#x9519;&#x3002; &#x5728;&#x4E0A;&#x9762;&#x7684;&#x90A3;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;make&#x8C03;&#x7528;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x662F;&#xFF0C;&#x628A; .o &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x7F6E;&#x6210; .c &#xFF0C;&#x5E76;&#x4F7F;&#x7528;C&#x7684; &#x7F16;&#x8BD1;&#x547D;&#x4EE4; cc &#x2013;c $(CFLAGS)  foo.c &#x6765;&#x751F;&#x6210; foo.o &#x7684;&#x76EE;&#x6807;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x6CA1;&#x6709;&#x5FC5;&#x8981; &#x5199;&#x4E0B;&#x4E0B;&#x9762;&#x7684;&#x4E24;&#x6761;&#x89C4;&#x5219;&#xFF1A;</p>
+<pre><code>foo.o : foo.c
+cc &#x2013;c foo.c $(CFLAGS)bar.o : bar.c
+cc &#x2013;c bar.c $(CFLAGS)
+</code></pre><p>&#x56E0;&#x4E3A;&#xFF0C;&#x8FD9;&#x5DF2;&#x7ECF;&#x662F;&#x201C;&#x7EA6;&#x5B9A;&#x201D;&#x597D;&#x4E86;&#x7684;&#x4E8B;&#x4E86;&#xFF0C;make&#x548C;&#x6211;&#x4EEC;&#x7EA6;&#x5B9A;&#x597D;&#x4E86;&#x7528;C&#x7F16;&#x8BD1;&#x5668; cc &#x751F;&#x6210; .o &#x6587;&#x4EF6;&#x7684;&#x89C4;&#x5219;&#xFF0C; &#x8FD9;&#x5C31;&#x662F;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E3A; .o &#x6587;&#x4EF6;&#x4E66;&#x5199;&#x4E86;&#x81EA;&#x5DF1;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x90A3;&#x4E48;make&#x5C31;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x5E76;&#x8C03;&#x7528;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x5B83;&#x4F1A;&#x6309;&#x7167; &#x6211;&#x4EEC;&#x5199;&#x597D;&#x7684;&#x89C4;&#x5219;&#x5FE0;&#x5B9E;&#x5730;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x8FD8;&#x6709;&#xFF0C;&#x5728;make&#x7684;&#x201C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x5E93;&#x201D;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E00;&#x6761;&#x9690;&#x542B;&#x89C4;&#x5219;&#x90FD;&#x5728;&#x5E93;&#x4E2D;&#x6709;&#x5176;&#x987A;&#x5E8F;&#xFF0C;&#x8D8A;&#x9760;&#x524D;&#x7684;&#x5219;&#x662F;&#x8D8A;&#x88AB;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C; &#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x6211;&#x4EEC;&#x6709;&#x4E9B;&#x65F6;&#x5019;&#x5373;&#x4F7F;&#x6211;&#x4EEC;&#x663E;&#x793A;&#x5730;&#x6307;&#x5B9A;&#x4E86;&#x76EE;&#x6807;&#x4F9D;&#x8D56;&#xFF0C;make&#x4E5F;&#x4E0D;&#x4F1A;&#x7BA1;&#x3002;&#x5982;&#x4E0B;&#x9762;&#x8FD9;&#x6761;&#x89C4;&#x5219;&#xFF08;&#x6CA1;&#x6709;&#x547D;&#x4EE4;&#xFF09;&#xFF1A;</p>
+<pre><code>foo.o : foo.p
+</code></pre><p>&#x4F9D;&#x8D56;&#x6587;&#x4EF6; foo.p &#xFF08;Pascal&#x7A0B;&#x5E8F;&#x7684;&#x6E90;&#x6587;&#x4EF6;&#xFF09;&#x6709;&#x53EF;&#x80FD;&#x53D8;&#x5F97;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x3002;&#x5982;&#x679C;&#x76EE;&#x5F55;&#x4E0B;&#x5B58;&#x5728;&#x4E86; foo.c &#x6587;&#x4EF6;&#xFF0C; &#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E00;&#x6837;&#x4F1A;&#x751F;&#x6548;&#xFF0C;&#x5E76;&#x4F1A;&#x901A;&#x8FC7; foo.c &#x8C03;&#x7528;C&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x751F;&#x6210; foo.o &#x6587;&#x4EF6;&#x3002;&#x56E0;&#x4E3A;&#xFF0C;&#x5728; &#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;Pascal&#x7684;&#x89C4;&#x5219;&#x51FA;&#x73B0;&#x5728;C&#x7684;&#x89C4;&#x5219;&#x4E4B;&#x540E;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;make&#x627E;&#x5230;&#x53EF;&#x4EE5;&#x751F;&#x6210; foo.o &#x7684;C&#x7684;&#x89C4;&#x5219;&#x5C31;&#x4E0D;&#x518D; &#x5BFB;&#x627E;&#x4E0B;&#x4E00;&#x6761;&#x89C4;&#x5219;&#x4E86;&#x3002;&#x5982;&#x679C;&#x4F60;&#x786E;&#x5B9E;&#x4E0D;&#x5E0C;&#x671B;&#x4EFB;&#x4F55;&#x9690;&#x542B;&#x89C4;&#x5219;&#x63A8;&#x5BFC;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x4F60;&#x5C31;&#x4E0D;&#x8981;&#x53EA;&#x5199;&#x51FA;&#x201C;&#x4F9D;&#x8D56;&#x89C4;&#x5219;&#x201D;&#xFF0C;&#x800C;&#x4E0D;&#x5199;&#x547D;&#x4EE4;&#x3002;</p>
+<h1 id="&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E00;&#x89C8;">&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E00;&#x89C8;</h1>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C06;&#x8BB2;&#x8FF0;&#x6240;&#x6709;&#x9884;&#x5148;&#x8BBE;&#x7F6E;&#xFF08;&#x4E5F;&#x5C31;&#x662F;make&#x5185;&#x5EFA;&#xFF09;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E0D;&#x660E;&#x786E;&#x5730;&#x5199;&#x4E0B;&#x89C4;&#x5219;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;make&#x5C31; &#x4F1A;&#x5728;&#x8FD9;&#x4E9B;&#x89C4;&#x5219;&#x4E2D;&#x5BFB;&#x627E;&#x6240;&#x9700;&#x8981;&#x89C4;&#x5219;&#x548C;&#x547D;&#x4EE4;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;make&#x7684;&#x53C2;&#x6570; -r &#x6216; --no-builtin-rules &#x9009;&#x9879;&#x6765;&#x53D6;&#x6D88;&#x6240;&#x6709;&#x7684;&#x9884;&#x8BBE;&#x7F6E;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x5373;&#x4F7F;&#x662F;&#x6211;&#x4EEC;&#x6307;&#x5B9A;&#x4E86; -r &#x53C2;&#x6570;&#xFF0C;&#x67D0;&#x4E9B;&#x9690;&#x542B;&#x89C4;&#x5219;&#x8FD8;&#x662F;&#x4F1A;&#x751F;&#x6548;&#xFF0C;&#x56E0;&#x4E3A;&#x6709;&#x8BB8;&#x591A;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x4E86; &#x201C;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x201D;&#x6765;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x53EA;&#x8981;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#x6709; &#x201C;&#x540E;&#x7F00;&#x5217;&#x8868;&#x201D;&#xFF08;&#x4E5F;&#x5C31;&#x4E00;&#x7CFB;&#x7EDF;&#x5B9A;&#x4E49;&#x5728;&#x76EE;&#x6807; .SUFFIXES &#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x9690;&#x542B;&#x89C4;&#x5219;&#x5C31;&#x4F1A;&#x751F;&#x6548;&#x3002;&#x9ED8;&#x8BA4;&#x7684;&#x540E;&#x7F00;&#x5217;&#x8868;&#x662F;&#xFF1A; .out, .a, .ln, .o, .c, .cc, .C, .p, .f, .F, .r, .y, .l, .s, .S, .mod, .sym, .def, .h, .info, .dvi, .tex, .texinfo, .texi, .txinfo, .w, .ch .web, .sh, .elc, .el&#x3002; &#x5177;&#x4F53;&#x7684;&#x7EC6;&#x8282;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x540E;&#x9762;&#x8BB2;&#x8FF0;&#x3002;</p>
+<p>&#x8FD8;&#x662F;&#x5148;&#x6765;&#x770B;&#x4E00;&#x770B;&#x5E38;&#x7528;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x5427;&#x3002;</p>
+<ol>
+<li>&#x7F16;&#x8BD1;C&#x7A0B;&#x5E8F;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;
+\<n\>.o &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; \<n\>.c &#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F; $(CC) &#x2013;c $(CPPFLAGS) $(CFLAGS)</n\></n\></li>
+<li>&#x7F16;&#x8BD1;C++&#x7A0B;&#x5E8F;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;
+\<n\>.o &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; \<n\>.cc &#x6216;&#x662F; \<n\>.C &#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F; $(CXX) &#x2013;c $(CPPFLAGS) $(CFLAGS) &#x3002;&#xFF08;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; .cc &#x4F5C;&#x4E3A;C++&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x540E;&#x7F00;&#xFF0C;&#x800C;&#x4E0D;&#x662F; .C &#xFF09;</n\></n\></n\></li>
+<li>&#x7F16;&#x8BD1;Pascal&#x7A0B;&#x5E8F;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;
+\<n\>.o &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; \<n\>.p &#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F; $(PC) &#x2013;c  $(PFLAGS) &#x3002;</n\></n\></li>
+<li><p>&#x7F16;&#x8BD1;Fortran/Ratfor&#x7A0B;&#x5E8F;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;
+\<n\>.o &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; \<n\>.r &#x6216; \<n\>.F &#x6216; \<n\>.f &#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;:</n\></n\></n\></n\></p>
+</li>
+<li><p>.f $(FC) &#x2013;c  $(FFLAGS)</p>
+</li>
+<li>.F $(FC) &#x2013;c  $(FFLAGS) $(CPPFLAGS)</li>
+<li>.f $(FC) &#x2013;c  $(FFLAGS) $(RFLAGS)</li>
+<li><p>&#x9884;&#x5904;&#x7406;Fortran/Ratfor&#x7A0B;&#x5E8F;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;
+\<n\>.f &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; \<n\>.r &#x6216; \<n\>.F &#x3002;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x53EA;&#x662F;&#x8F6C;&#x6362;Ratfor &#x6216;&#x6709;&#x9884;&#x5904;&#x7406;&#x7684;Fortran&#x7A0B;&#x5E8F;&#x5230;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x7684;Fortran&#x7A0B;&#x5E8F;&#x3002;&#x5176;&#x4F7F;&#x7528;&#x7684;&#x547D;&#x4EE4;&#x662F;&#xFF1A;</n\></n\></n\></p>
+</li>
+<li><p>.F $(FC) &#x2013;F $(CPPFLAGS) $(FFLAGS)</p>
+</li>
+<li>.r $(FC) &#x2013;F $(FFLAGS) $(RFLAGS)</li>
+<li>&#x7F16;&#x8BD1;Modula-2&#x7A0B;&#x5E8F;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;
+\<n\>.sym &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; \<n\>.def &#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; $(M2C) $(M2FLAGS) $(DEFFLAGS) &#x3002; \<n\>.o &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; \<n\>.mod &#xFF0C; &#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; $(M2C) $(M2FLAGS) $(MODFLAGS) &#x3002;</n\></n\></n\></n\></li>
+<li>&#x6C47;&#x7F16;&#x548C;&#x6C47;&#x7F16;&#x9884;&#x5904;&#x7406;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;
+\<n\>.o &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; \<n\>.s &#xFF0C;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x7F16;&#x8BD1;&#x54C1; as &#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210; &#x547D;&#x4EE4;&#x662F;&#xFF1A; $ (AS) $(ASFLAGS) &#x3002; \<n\>.s &#x7684;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; \<n\>.S &#xFF0C; &#x9ED8;&#x8BA4;&#x4F7F;&#x7528;C&#x9884;&#x7F16;&#x8BD1;&#x5668; cpp &#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; $(AS) $(ASFLAGS) &#x3002;</n\></n\></n\></n\></li>
+<li><p>&#x94FE;&#x63A5;Object&#x6587;&#x4EF6;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;
+\<n\> &#x76EE;&#x6807;&#x4F9D;&#x8D56;&#x4E8E; \<n\>.o &#xFF0C;&#x901A;&#x8FC7;&#x8FD0;&#x884C;C&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x6765;&#x8FD0;&#x884C;&#x94FE;&#x63A5;&#x7A0B;&#x5E8F;&#x751F;&#x6210;&#xFF08;&#x4E00;&#x822C;&#x662F; ld &#xFF09;&#xFF0C; &#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; $(CC) $(LDFLAGS) \<n\>.o $(LOADLIBES) $(LDLIBS) &#x3002;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x5BF9;&#x4E8E; &#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x5DE5;&#x7A0B;&#x6709;&#x6548;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x5BF9;&#x591A;&#x4E2A;Object&#x6587;&#x4EF6;&#xFF08;&#x7531;&#x4E0D;&#x540C;&#x7684;&#x6E90;&#x6587;&#x4EF6;&#x751F;&#x6210;&#xFF09;&#x7684;&#x4E5F;&#x6709;&#x6548;&#x3002;&#x4F8B;&#x5982;&#x5982;&#x4E0B;&#x89C4;&#x5219;:</n\></n\></n\></p>
+<pre><code>x : y.o z.o
+</code></pre><p>&#x5E76;&#x4E14; x.c &#x3001; y.c &#x548C; z.c &#x90FD;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x5C06;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;:</p>
+<pre><code>cc -c x.c -o x.occ -c y.c -o y.occ -c z.c -o z.occ x.o y.o z.o -o xrm -f x.orm -f y.orm -f z.o
+</code></pre><p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4E00;&#x4E2A;&#x6E90;&#x6587;&#x4EF6;&#xFF08;&#x5982;&#x4E0A;&#x4F8B;&#x4E2D;&#x7684;x.c&#xFF09;&#x548C;&#x4F60;&#x7684;&#x76EE;&#x6807;&#x540D;&#x5B57;&#xFF08;&#x5982;&#x4E0A;&#x4F8B;&#x4E2D;&#x7684;x&#xFF09;&#x76F8;&#x5173;&#x8054;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x4F60;&#x6700;&#x597D;&#x5199;&#x51FA;&#x81EA;&#x5DF1; &#x7684;&#x751F;&#x6210;&#x89C4;&#x5219;&#xFF0C;&#x4E0D;&#x7136;&#xFF0C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4F1A;&#x62A5;&#x9519;&#x7684;&#x3002;</p>
+</li>
+<li><p>Yacc C&#x7A0B;&#x5E8F;&#x65F6;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;
+\<n\>.c &#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x88AB;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; n.y &#xFF08;Yacc&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#xFF09;&#xFF0C;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; $(YACC) $(YFALGS) &#x3002; &#xFF08;&#x201C;Yacc&#x201D;&#x662F;&#x4E00;&#x4E2A;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x5668;&#xFF0C;&#x5173;&#x4E8E;&#x5176;&#x7EC6;&#x8282;&#x8BF7;&#x67E5;&#x770B;&#x76F8;&#x5173;&#x8D44;&#x6599;&#xFF09;</n\></p>
+</li>
+<li>Lex C&#x7A0B;&#x5E8F;&#x65F6;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;
+\<n\>.c &#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x88AB;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; n.l &#xFF08;Lex&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#xFF09;&#xFF0C;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; $(LEX) $(LFALGS) &#x3002; &#xFF08;&#x5173;&#x4E8E;&#x201C;Lex&#x201D;&#x7684;&#x7EC6;&#x8282;&#x8BF7;&#x67E5;&#x770B;&#x76F8;&#x5173;&#x8D44;&#x6599;&#xFF09;</n\></li>
+<li>Lex Ratfor&#x7A0B;&#x5E8F;&#x65F6;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;
+\<n\>.r &#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x88AB;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; n.l &#xFF08;Lex&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#xFF09;&#xFF0C;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; $(LEX) $(LFALGS) &#x3002;</n\></li>
+<li>&#x4ECE;C&#x7A0B;&#x5E8F;&#x3001;Yacc&#x6587;&#x4EF6;&#x6216;Lex&#x6587;&#x4EF6;&#x521B;&#x5EFA;Lint&#x5E93;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;
+\<n\>.ln &#xFF08;lint&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#xFF09;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x88AB;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x4E3A; n.c &#xFF0C;&#x5176;&#x751F;&#x6210;&#x547D;&#x4EE4;&#x662F;&#xFF1A; $(LINT) $(LINTFALGS) $(CPPFLAGS) -i &#x3002;&#x5BF9;&#x4E8E; \<n\>.y &#x548C; \<n\>.l &#x4E5F;&#x662F;&#x540C;&#x6837;&#x7684;&#x89C4;&#x5219;&#x3002;</n\></n\></n\></li>
+</ol>
+<h1 id="&#x9690;&#x542B;&#x89C4;&#x5219;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;">&#x9690;&#x542B;&#x89C4;&#x5219;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;</h1>
+<p>&#x5728;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x4E2D;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E9B;&#x9884;&#x5148;&#x8BBE;&#x7F6E;&#x7684;&#x53D8;&#x91CF;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4F60;&#x7684;makefile&#x4E2D;&#x6539;&#x53D8;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C; &#x6216;&#x662F;&#x5728;make&#x7684;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x4F20;&#x5165;&#x8FD9;&#x4E9B;&#x503C;&#xFF0C;&#x6216;&#x662F;&#x5728;&#x4F60;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E9B;&#x503C;&#xFF0C;&#x65E0;&#x8BBA;&#x600E;&#x4E48;&#x6837;&#xFF0C;&#x53EA;&#x8981;&#x8BBE;&#x7F6E;&#x4E86;&#x8FD9;&#x4E9B;&#x7279;&#x5B9A;&#x7684;&#x53D8;&#x91CF;&#xFF0C; &#x90A3;&#x4E48;&#x5176;&#x5C31;&#x4F1A;&#x5BF9;&#x9690;&#x542B;&#x89C4;&#x5219;&#x8D77;&#x4F5C;&#x7528;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5229;&#x7528;make&#x7684; -R &#x6216; --no&#x2013;builtin-variables &#x53C2;&#x6570;&#x6765;&#x53D6;&#x6D88;&#x4F60;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x9690;&#x542B;&#x89C4;&#x5219;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x7B2C;&#x4E00;&#x6761;&#x9690;&#x542B;&#x89C4;&#x5219;&#x2014;&#x2014;&#x7F16;&#x8BD1;C&#x7A0B;&#x5E8F;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x7684;&#x547D;&#x4EE4;&#x662F; $(CC) &#x2013;c $(CFLAGS) $(CPPFLAGS) &#x3002; Make&#x9ED8;&#x8BA4;&#x7684;&#x7F16;&#x8BD1;&#x547D;&#x4EE4;&#x662F; cc &#xFF0C;&#x5982;&#x679C;&#x4F60;&#x628A;&#x53D8;&#x91CF; $(CC) &#x91CD;&#x5B9A;&#x4E49;&#x6210; gcc &#xFF0C;&#x628A;&#x53D8;&#x91CF; $(CFLAGS) &#x91CD;&#x5B9A;&#x4E49;&#x6210; -g &#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x5168;&#x90E8;&#x4F1A;&#x4EE5; gcc &#x2013;c -g $(CPPFLAGS) &#x7684;&#x6837;&#x5B50;&#x6765;&#x6267;&#x884C;&#x4E86;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;&#x5206;&#x6210;&#x4E24;&#x79CD;&#xFF1A;&#x4E00;&#x79CD;&#x662F;&#x547D;&#x4EE4;&#x76F8;&#x5173;&#x7684;&#xFF0C;&#x5982; CC &#xFF1B;&#x4E00;&#x79CD;&#x662F;&#x53C2;&#x6570;&#x76F8;&#x7684;&#x5173;&#xFF0C;&#x5982; CFLAGS &#x3002;&#x4E0B;&#x9762;&#x662F;&#x6240;&#x6709;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#x4F1A;&#x7528;&#x5230;&#x7684;&#x53D8;&#x91CF;&#xFF1A;</p>
+<h1 id="&#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x7684;&#x53D8;&#x91CF;&#x3002;">&#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x7684;&#x53D8;&#x91CF;&#x3002;</h1>
+<ul>
+<li>AR : &#x51FD;&#x6570;&#x5E93;&#x6253;&#x5305;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; ar</li>
+<li>AS : &#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; as</li>
+<li>CC : C&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; cc</li>
+<li>CXX : C++&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; g++</li>
+<li>CO : &#x4ECE; RCS&#x6587;&#x4EF6;&#x4E2D;&#x6269;&#x5C55;&#x6587;&#x4EF6;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; co</li>
+<li>CPP : C&#x7A0B;&#x5E8F;&#x7684;&#x9884;&#x5904;&#x7406;&#x5668;&#xFF08;&#x8F93;&#x51FA;&#x662F;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x8BBE;&#x5907;&#xFF09;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; $(CC) &#x2013;E</li>
+<li>FC : Fortran &#x548C; Ratfor &#x7684;&#x7F16;&#x8BD1;&#x5668;&#x548C;&#x9884;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; f77</li>
+<li>GET : &#x4ECE;SCCS&#x6587;&#x4EF6;&#x4E2D;&#x6269;&#x5C55;&#x6587;&#x4EF6;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; get</li>
+<li>LEX : Lex&#x65B9;&#x6CD5;&#x5206;&#x6790;&#x5668;&#x7A0B;&#x5E8F;&#xFF08;&#x9488;&#x5BF9;&#x4E8E;C&#x6216;Ratfor&#xFF09;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; lex</li>
+<li>PC : Pascal&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; pc</li>
+<li>YACC : Yacc&#x6587;&#x6CD5;&#x5206;&#x6790;&#x5668;&#xFF08;&#x9488;&#x5BF9;&#x4E8E;C&#x7A0B;&#x5E8F;&#xFF09;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; yacc</li>
+<li>YACCR : Yacc&#x6587;&#x6CD5;&#x5206;&#x6790;&#x5668;&#xFF08;&#x9488;&#x5BF9;&#x4E8E;Ratfor&#x7A0B;&#x5E8F;&#xFF09;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; yacc &#x2013;r</li>
+<li>MAKEINFO : &#x8F6C;&#x6362;Texinfo&#x6E90;&#x6587;&#x4EF6;&#xFF08;.texi&#xFF09;&#x5230;Info&#x6587;&#x4EF6;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; makeinfo</li>
+<li>TEX : &#x4ECE;TeX&#x6E90;&#x6587;&#x4EF6;&#x521B;&#x5EFA;TeX DVI&#x6587;&#x4EF6;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; tex</li>
+<li>TEXI2DVI : &#x4ECE;Texinfo&#x6E90;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x519B;TeX DVI &#x6587;&#x4EF6;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; texi2dvi</li>
+<li>WEAVE : &#x8F6C;&#x6362;Web&#x5230;TeX&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; weave</li>
+<li>CWEAVE : &#x8F6C;&#x6362;C Web &#x5230; TeX&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; cweave</li>
+<li>TANGLE : &#x8F6C;&#x6362;Web&#x5230;Pascal&#x8BED;&#x8A00;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; tangle</li>
+<li>CTANGLE : &#x8F6C;&#x6362;C Web &#x5230; C&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; ctangle</li>
+<li>RM : &#x5220;&#x9664;&#x6587;&#x4EF6;&#x547D;&#x4EE4;&#x3002;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x662F; rm &#x2013;f</li>
+</ul>
+<h1 id="&#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x53C2;&#x6570;&#x7684;&#x53D8;&#x91CF;">&#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x53C2;&#x6570;&#x7684;&#x53D8;&#x91CF;</h1>
+<p>&#x4E0B;&#x9762;&#x7684;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x90FD;&#x662F;&#x76F8;&#x5173;&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x7684;&#x53C2;&#x6570;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x660E;&#x5176;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x5176;&#x9ED8;&#x8BA4;&#x503C;&#x90FD;&#x662F;&#x7A7A;&#x3002;</p>
+<ul>
+<li>ARFLAGS : &#x51FD;&#x6570;&#x5E93;&#x6253;&#x5305;&#x7A0B;&#x5E8F;AR&#x547D;&#x4EE4;&#x7684;&#x53C2;&#x6570;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x662F; rv</li>
+<li>ASFLAGS : &#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x3002;&#xFF08;&#x5F53;&#x660E;&#x663E;&#x5730;&#x8C03;&#x7528; .s &#x6216; .S &#x6587;&#x4EF6;&#x65F6;&#xFF09;</li>
+<li>CFLAGS : C&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x3002;</li>
+<li>CXXFLAGS : C++&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x3002;</li>
+<li>COFLAGS : RCS&#x547D;&#x4EE4;&#x53C2;&#x6570;&#x3002;</li>
+<li>CPPFLAGS : C&#x9884;&#x5904;&#x7406;&#x5668;&#x53C2;&#x6570;&#x3002;&#xFF08; C &#x548C; Fortran &#x7F16;&#x8BD1;&#x5668;&#x4E5F;&#x4F1A;&#x7528;&#x5230;&#xFF09;&#x3002;</li>
+<li>FFLAGS : Fortran&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x3002;</li>
+<li>GFLAGS : SCCS &#x201C;get&#x201D;&#x7A0B;&#x5E8F;&#x53C2;&#x6570;&#x3002;</li>
+<li>LDFLAGS : &#x94FE;&#x63A5;&#x5668;&#x53C2;&#x6570;&#x3002;&#xFF08;&#x5982;&#xFF1A; ld &#xFF09;</li>
+<li>LFLAGS : Lex&#x6587;&#x6CD5;&#x5206;&#x6790;&#x5668;&#x53C2;&#x6570;&#x3002;</li>
+<li>PFLAGS : Pascal&#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x3002;</li>
+<li>RFLAGS : Ratfor &#x7A0B;&#x5E8F;&#x7684;Fortran &#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x3002;</li>
+<li>YFLAGS : Yacc&#x6587;&#x6CD5;&#x5206;&#x6790;&#x5668;&#x53C2;&#x6570;&#x3002;</li>
+</ul>
+<h1 id="&#x9690;&#x542B;&#x89C4;&#x5219;&#x94FE;">&#x9690;&#x542B;&#x89C4;&#x5219;&#x94FE;</h1>
+<p>&#x6709;&#x4E9B;&#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x53EF;&#x80FD;&#x88AB;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x6240;&#x4F5C;&#x7528;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E2A; .o &#x7684;&#x6587;&#x4EF6;&#x751F;&#x6210;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x662F;&#x5148;&#x88AB; Yacc&#x7684;[.y]&#x6587;&#x4EF6;&#x5148;&#x6210; .c &#xFF0C;&#x7136;&#x540E;&#x518D;&#x88AB;C&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x751F;&#x6210;&#x3002;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x53EB;&#x505A;&#x201C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x94FE;&#x201D;&#x3002;</p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6587;&#x4EF6; .c &#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x76F4;&#x63A5;&#x8C03;&#x7528;C&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709; .c &#x6587;&#x4EF6;&#xFF0C; &#x4F46;&#x6709;&#x4E00;&#x4E2A; .y &#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;Yacc&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x751F;&#x6210; .c &#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#xFF0C;&#x518D;&#x8C03;&#x7528;C&#x7F16;&#x8BD1;&#x7684;&#x9690;&#x542B; &#x89C4;&#x5219;&#x6700;&#x7EC8;&#x7531; .c &#x751F;&#x6210; .o &#x6587;&#x4EF6;&#xFF0C;&#x8FBE;&#x5230;&#x76EE;&#x6807;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x79CD; .c &#x7684;&#x6587;&#x4EF6;&#xFF08;&#x6216;&#x662F;&#x76EE;&#x6807;&#xFF09;&#xFF0C;&#x53EB;&#x505A;&#x4E2D;&#x95F4;&#x76EE;&#x6807;&#x3002;&#x4E0D;&#x7BA1;&#x600E;&#x4E48;&#x6837;&#xFF0C;make&#x4F1A;&#x52AA;&#x529B;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x751F;&#x6210;&#x76EE;&#x6807;&#x7684; &#x4E00;&#x5207;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x7BA1;&#x4E2D;&#x95F4;&#x76EE;&#x6807;&#x6709;&#x591A;&#x5C11;&#xFF0C;&#x5176;&#x90FD;&#x4F1A;&#x6267;&#x7740;&#x5730;&#x628A;&#x6240;&#x6709;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x548C;&#x4F60;&#x4E66;&#x5199;&#x7684;&#x89C4;&#x5219;&#x5168;&#x90E8;&#x5408;&#x8D77;&#x6765;&#x5206;&#x6790;&#xFF0C;&#x52AA;&#x529B;&#x8FBE;&#x5230; &#x76EE;&#x6807;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x6709;&#x4E9B;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x8BA9;&#x4F60;&#x89C9;&#x5F97;&#x5947;&#x602A;&#xFF0C;&#x600E;&#x4E48;&#x6211;&#x7684;&#x76EE;&#x6807;&#x4F1A;&#x8FD9;&#x6837;&#x751F;&#x6210;&#xFF1F;&#x600E;&#x4E48;&#x6211;&#x7684; makefile&#x53D1;&#x75AF;&#x4E86;&#xFF1F;</p>
+<p>&#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E2D;&#x95F4;&#x76EE;&#x6807;&#xFF0C;&#x5B83;&#x548C;&#x4E00;&#x822C;&#x7684;&#x76EE;&#x6807;&#x6709;&#x4E24;&#x4E2A;&#x5730;&#x65B9;&#x6240;&#x4E0D;&#x540C;&#xFF1A;&#x7B2C;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x662F;&#x9664;&#x975E;&#x4E2D;&#x95F4;&#x7684;&#x76EE;&#x6807;&#x4E0D;&#x5B58;&#x5728;&#xFF0C; &#x624D;&#x4F1A;&#x5F15;&#x53D1;&#x4E2D;&#x95F4;&#x89C4;&#x5219;&#x3002;&#x7B2C;&#x4E8C;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x53EA;&#x8981;&#x76EE;&#x6807;&#x6210;&#x529F;&#x4EA7;&#x751F;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x4EA7;&#x751F;&#x6700;&#x7EC8;&#x76EE;&#x6807;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6240;&#x4EA7;&#x751F;&#x7684;&#x4E2D;&#x95F4;&#x76EE;&#x6807; &#x6587;&#x4EF6;&#x4F1A;&#x88AB;&#x4EE5; rm -f &#x5220;&#x9664;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#xFF0C;&#x4E00;&#x4E2A;&#x88AB;makefile&#x6307;&#x5B9A;&#x6210;&#x76EE;&#x6807;&#x6216;&#x662F;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x7684;&#x6587;&#x4EF6;&#x4E0D;&#x80FD;&#x88AB;&#x5F53;&#x4F5C;&#x4E2D;&#x4ECB;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x660E;&#x663E;&#x5730;&#x8BF4;&#x660E;&#x4E00;&#x4E2A; &#x6587;&#x4EF6;&#x6216;&#x662F;&#x76EE;&#x6807;&#x662F;&#x4E2D;&#x4ECB;&#x76EE;&#x6807;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4F2A;&#x76EE;&#x6807; .INTERMEDIATE &#x6765;&#x5F3A;&#x5236;&#x58F0;&#x660E;&#x3002; &#xFF08;&#x5982;&#xFF1A; .INTERMEDIATE : mid &#xFF09;</p>
+<p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x963B;&#x6B62;make&#x81EA;&#x52A8;&#x5220;&#x9664;&#x4E2D;&#x95F4;&#x76EE;&#x6807;&#xFF0C;&#x8981;&#x505A;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4F2A;&#x76EE;&#x6807; .SECONDARY &#x6765;&#x5F3A;&#x5236;&#x58F0;&#x660E; &#xFF08;&#x5982;&#xFF1A; .SECONDARY : sec &#xFF09;&#x3002;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x628A;&#x4F60;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x4EE5;&#x6A21;&#x5F0F;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x6307;&#x5B9A;&#xFF08;&#x5982;&#xFF1A; %.o &#xFF09;&#x6210; &#x4F2A;&#x76EE;&#x6807; .PRECIOUS &#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#xFF0C;&#x4EE5;&#x4FDD;&#x5B58;&#x88AB;&#x9690;&#x542B;&#x89C4;&#x5219;&#x6240;&#x751F;&#x6210;&#x7684;&#x4E2D;&#x95F4;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x5728;&#x201C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x94FE;&#x201D;&#x4E2D;&#xFF0C;&#x7981;&#x6B62;&#x540C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x51FA;&#x73B0;&#x4E24;&#x6B21;&#x6216;&#x4E24;&#x6B21;&#x4EE5;&#x4E0A;&#xFF0C;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#xFF0C;&#x5C31;&#x53EF;&#x9632;&#x6B62;&#x5728;make&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x65F6;&#x51FA;&#x73B0; &#x65E0;&#x9650;&#x9012;&#x5F52;&#x7684;&#x60C5;&#x51B5;&#x3002;
+Make&#x4F1A;&#x4F18;&#x5316;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x800C;&#x4E0D;&#x751F;&#x6210;&#x4E2D;&#x95F4;&#x6587;&#x4EF6;&#x3002;&#x5982;&#xFF0C;&#x4ECE;&#x6587;&#x4EF6; foo.c &#x751F;&#x6210;&#x76EE;&#x6807;&#x7A0B;&#x5E8F; foo &#xFF0C; &#x6309;&#x9053;&#x7406;&#xFF0C;make&#x4F1A;&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x4E2D;&#x95F4;&#x6587;&#x4EF6; foo.o &#xFF0C;&#x7136;&#x540E;&#x94FE;&#x63A5;&#x6210; foo &#xFF0C;&#x4F46;&#x5728;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E00;&#x52A8;&#x4F5C;&#x53EF;&#x4EE5; &#x88AB;&#x4E00;&#x6761; cc &#x7684;&#x547D;&#x4EE4;&#x5B8C;&#x6210;&#xFF08; cc &#x2013;o foo foo.c &#xFF09;&#xFF0C;&#x4E8E;&#x662F;&#x4F18;&#x5316;&#x8FC7;&#x7684;&#x89C4;&#x5219;&#x5C31;&#x4E0D;&#x4F1A;&#x751F;&#x6210;&#x4E2D;&#x95F4;&#x6587;&#x4EF6;&#x3002;</p>
+<h1 id="&#x5B9A;&#x4E49;&#x6A21;&#x5F0F;&#x89C4;&#x5219;">&#x5B9A;&#x4E49;&#x6A21;&#x5F0F;&#x89C4;&#x5219;</h1>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x6765;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x5C31;&#x597D;&#x50CF;&#x4E00;&#x4E2A;&#x4E00;&#x822C;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x53EA;&#x662F;&#x5728;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x76EE;&#x6807;&#x7684;&#x5B9A;&#x4E49; &#x9700;&#x8981;&#x6709; % &#x5B57;&#x7B26;&#x3002; % &#x7684;&#x610F;&#x601D;&#x662F;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x3002;&#x5728;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; % &#xFF0C; &#x53EA;&#x662F;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D;&#x7684; % &#x7684;&#x53D6;&#x503C;&#xFF0C;&#x53D6;&#x51B3;&#x4E8E;&#x5176;&#x76EE;&#x6807;&#x3002;</p>
+<p>&#x6709;&#x4E00;&#x70B9;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C; % &#x7684;&#x5C55;&#x5F00;&#x53D1;&#x751F;&#x5728;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x7684;&#x5C55;&#x5F00;&#x4E4B;&#x540E;&#xFF0C;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x7684;&#x5C55;&#x5F00;&#x53D1;&#x751F;&#x5728;make&#x8F7D;&#x5165; Makefile&#x65F6;&#xFF0C;&#x800C;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4E2D;&#x7684; % &#x5219;&#x53D1;&#x751F;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x3002;</p>
+<h1 id="&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4ECB;&#x7ECD;">&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4ECB;&#x7ECD;</h1>
+<p>&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x81F3;&#x5C11;&#x5728;&#x89C4;&#x5219;&#x7684;&#x76EE;&#x6807;&#x5B9A;&#x4E49;&#x4E2D;&#x8981;&#x5305;&#x542B; % &#xFF0C;&#x5426;&#x5219;&#xFF0C;&#x5C31;&#x662F;&#x4E00;&#x822C;&#x7684;&#x89C4;&#x5219;&#x3002;&#x76EE;&#x6807;&#x4E2D;&#x7684; % &#x5B9A;&#x4E49; &#x8868;&#x793A;&#x5BF9;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x5339;&#x914D;&#xFF0C; % &#x8868;&#x793A;&#x957F;&#x5EA6;&#x4EFB;&#x610F;&#x7684;&#x975E;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x4F8B;&#x5982;&#xFF1A; %.c &#x8868;&#x793A;&#x4EE5; .c &#x7ED3;&#x5C3E;&#x7684; &#x6587;&#x4EF6;&#x540D;&#xFF08;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x957F;&#x5EA6;&#x81F3;&#x5C11;&#x4E3A;3&#xFF09;&#xFF0C;&#x800C; s.%.c &#x5219;&#x8868;&#x793A;&#x4EE5; s. &#x5F00;&#x5934;&#xFF0C; .c &#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;&#x540D; &#xFF08;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x957F;&#x5EA6;&#x81F3;&#x5C11;&#x4E3A;5&#xFF09;&#x3002;</p>
+<p>&#x5982;&#x679C; % &#x5B9A;&#x4E49;&#x5728;&#x76EE;&#x6807;&#x4E2D;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x76EE;&#x6807;&#x4E2D;&#x7684; % &#x7684;&#x503C;&#x51B3;&#x5B9A;&#x4E86;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D;&#x7684; % &#x7684;&#x503C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C; &#x76EE;&#x6807;&#x4E2D;&#x7684;&#x6A21;&#x5F0F;&#x7684; % &#x51B3;&#x5B9A;&#x4E86;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D; % &#x7684;&#x6837;&#x5B50;&#x3002;&#x4F8B;&#x5982;&#x6709;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>%.o : %.c ; &lt;command ......&gt;;
+</code></pre><p>&#x5176;&#x542B;&#x4E49;&#x662F;&#xFF0C;&#x6307;&#x51FA;&#x4E86;&#x600E;&#x4E48;&#x4ECE;&#x6240;&#x6709;&#x7684; .c &#x6587;&#x4EF6;&#x751F;&#x6210;&#x76F8;&#x5E94;&#x7684; .o &#x6587;&#x4EF6;&#x7684;&#x89C4;&#x5219;&#x3002;&#x5982;&#x679C;&#x8981;&#x751F;&#x6210;&#x7684;&#x76EE;&#x6807;&#x662F; a.o b.o &#xFF0C;&#x90A3;&#x4E48; %c &#x5C31;&#x662F; a.c b.c &#x3002;
+&#x4E00;&#x65E6;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D;&#x7684; % &#x6A21;&#x5F0F;&#x88AB;&#x786E;&#x5B9A;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;make&#x4F1A;&#x88AB;&#x8981;&#x6C42;&#x53BB;&#x5339;&#x914D;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x7684;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x4E00;&#x65E6;&#x627E;&#x5230;&#xFF0C; make&#x5C31;&#x4F1A;&#x89C4;&#x5219;&#x4E0B;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5728;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x76EE;&#x6807;&#x53EF;&#x80FD;&#x4F1A;&#x662F;&#x591A;&#x4E2A;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x51FA;&#x591A;&#x4E2A;&#x76EE;&#x6807;&#xFF0C;make&#x5C31; &#x4F1A;&#x4EA7;&#x751F;&#x6240;&#x6709;&#x7684;&#x6A21;&#x5F0F;&#x76EE;&#x6807;&#xFF0C;&#x6B64;&#x65F6;&#xFF0C;make&#x5173;&#x5FC3;&#x7684;&#x662F;&#x4F9D;&#x8D56;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x548C;&#x751F;&#x6210;&#x76EE;&#x6807;&#x7684;&#x547D;&#x4EE4;&#x8FD9;&#x4E24;&#x4EF6;&#x4E8B;&#x3002;</p>
+<h1 id="&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x793A;&#x4F8B;">&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x793A;&#x4F8B;</h1>
+<p>&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x8868;&#x793A;&#x4E86;,&#x628A;&#x6240;&#x6709;&#x7684; .c &#x6587;&#x4EF6;&#x90FD;&#x7F16;&#x8BD1;&#x6210; .o &#x6587;&#x4EF6;.</p>
+<pre><code>%.o : %.c
+$(CC) -c $(CFLAGS) $(CPPFLAGS) $&lt; -o $@
+</code></pre><p>&#x5176;&#x4E2D;&#xFF0C; $@ &#x8868;&#x793A;&#x6240;&#x6709;&#x7684;&#x76EE;&#x6807;&#x7684;&#x6328;&#x4E2A;&#x503C;&#xFF0C; $&lt; &#x8868;&#x793A;&#x4E86;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x7684;&#x6328;&#x4E2A;&#x503C;&#x3002;&#x8FD9;&#x4E9B;&#x5947;&#x602A;&#x7684;&#x53D8;&#x91CF;&#x6211;&#x4EEC; &#x53EB;&#x201C;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x201D;&#xFF0C;&#x540E;&#x9762;&#x4F1A;&#x8BE6;&#x7EC6;&#x8BB2;&#x8FF0;&#x3002;
+&#x4E0B;&#x9762;&#x7684;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x6709;&#x4E24;&#x4E2A;&#x76EE;&#x6807;&#x662F;&#x6A21;&#x5F0F;&#x7684;&#xFF1A;</p>
+<pre><code>%.tab.c %.tab.h: %.y
+bison -d $&lt;
+</code></pre><p>&#x8FD9;&#x6761;&#x89C4;&#x5219;&#x544A;&#x8BC9;make&#x628A;&#x6240;&#x6709;&#x7684; .y &#x6587;&#x4EF6;&#x90FD;&#x4EE5; bison -d \<n\>.y &#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x751F;&#x6210; \<n\>.tab.c &#x548C; \<n\>.tab.h &#x6587;&#x4EF6;&#x3002;&#xFF08;&#x5176;&#x4E2D;&#xFF0C; \<n\> &#x8868;&#x793A;&#x4E00;&#x4E2A;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x4E32;&#xFF09;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x7684;&#x6267;&#x884C;&#x7A0B;&#x5E8F; foo &#x4F9D;&#x8D56;&#x4E8E;&#x6587;&#x4EF6; parse.tab.o &#x548C; scan.o &#xFF0C;&#x5E76;&#x4E14;&#x6587;&#x4EF6; scan.o &#x4F9D;&#x8D56;&#x4E8E;&#x6587;&#x4EF6; parse.tab.h &#xFF0C; &#x5982;&#x679C; parse.y &#x6587;&#x4EF6;&#x88AB;&#x66F4;&#x65B0;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x6839;&#x636E;&#x4E0A;&#x8FF0;&#x7684;&#x89C4;&#x5219;&#xFF0C; bison -d parse.y &#x5C31;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C; &#x4E8E;&#x662F;&#xFF0C; parse.tab.o &#x548C; scan.o &#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x5C31;&#x9F50;&#x4E86;&#x3002;&#xFF08;&#x5047;&#x8BBE;&#xFF0C; parse.tab.o &#x7531; parse.tab.c &#x751F;&#x6210;&#xFF0C;&#x548C; scan.o &#x7531; scan.c &#x751F;&#x6210;&#xFF0C;&#x800C; foo &#x7531; parse.tab.o &#x548C; scan.o &#x94FE;&#x63A5;&#x751F;&#x6210;&#xFF0C;&#x800C;&#x4E14; foo &#x548C;&#x5176; .o &#x6587;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x4E5F;&#x5199;&#x597D;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x76EE;&#x6807;&#x90FD;&#x4F1A;&#x5F97;&#x5230;&#x6EE1;&#x8DB3;&#xFF09;</n\></n\></n\></n\></p>
+<h1 id="&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;">&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;</h1>
+<p>&#x5728;&#x4E0A;&#x8FF0;&#x7684;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x76EE;&#x6807;&#x548C;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x90FD;&#x662F;&#x4E00;&#x7CFB;&#x4F8B;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x4E66;&#x5199;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x6765;&#x5B8C;&#x6210;&#x4ECE;&#x4E0D;&#x540C;&#x7684;&#x4F9D;&#x8D56; &#x6587;&#x4EF6;&#x751F;&#x6210;&#x76F8;&#x5E94;&#x7684;&#x76EE;&#x6807;&#xFF1F;&#x56E0;&#x4E3A;&#x5728;&#x6BCF;&#x4E00;&#x6B21;&#x7684;&#x5BF9;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x7684;&#x89E3;&#x6790;&#x65F6;&#xFF0C;&#x90FD;&#x4F1A;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x76EE;&#x6807;&#x548C;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x5C31;&#x662F;&#x5B8C;&#x6210;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x7684;&#x3002;&#x5728;&#x524D;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5BF9;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x6709;&#x6240;&#x63D0;&#x6D89;&#xFF0C;&#x76F8;&#x4FE1;&#x4F60;&#x770B;&#x5230;&#x8FD9;&#x91CC;&#x5DF2;&#x5BF9;&#x5B83;&#x6709;&#x4E00;&#x4E2A; &#x611F;&#x6027;&#x8BA4;&#x8BC6;&#x4E86;&#x3002;&#x6240;&#x8C13;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#xFF0C;&#x5C31;&#x662F;&#x8FD9;&#x79CD;&#x53D8;&#x91CF;&#x4F1A;&#x628A;&#x6A21;&#x5F0F;&#x4E2D;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x6587;&#x4EF6;&#x81EA;&#x52A8;&#x5730;&#x6328;&#x4E2A;&#x53D6;&#x51FA;&#xFF0C;&#x76F4;&#x81F3;&#x6240;&#x6709;&#x7684; &#x7B26;&#x5408;&#x6A21;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x90FD;&#x53D6;&#x5B8C;&#x4E86;&#x3002;&#x8FD9;&#x79CD;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x53EA;&#x5E94;&#x51FA;&#x73B0;&#x5728;&#x89C4;&#x5219;&#x7684;&#x547D;&#x4EE4;&#x4E2D;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x6240;&#x6709;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x53CA;&#x5176;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li>$@ : &#x8868;&#x793A;&#x89C4;&#x5219;&#x4E2D;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x96C6;&#x3002;&#x5728;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x76EE;&#x6807;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C; $@ &#x5C31;&#x662F;&#x5339;&#x914D;&#x4E8E; &#x76EE;&#x6807;&#x4E2D;&#x6A21;&#x5F0F;&#x5B9A;&#x4E49;&#x7684;&#x96C6;&#x5408;&#x3002;</li>
+<li>$% : &#x4EC5;&#x5F53;&#x76EE;&#x6807;&#x662F;&#x51FD;&#x6570;&#x5E93;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x8868;&#x793A;&#x89C4;&#x5219;&#x4E2D;&#x7684;&#x76EE;&#x6807;&#x6210;&#x5458;&#x540D;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x662F; foo.a(bar.o) &#xFF0C; &#x90A3;&#x4E48;&#xFF0C; $% &#x5C31;&#x662F; bar.o &#xFF0C; $@ &#x5C31;&#x662F; foo.a &#x3002;&#x5982;&#x679C;&#x76EE;&#x6807;&#x4E0D;&#x662F;&#x51FD;&#x6570;&#x5E93;&#x6587;&#x4EF6; &#xFF08;Unix&#x4E0B;&#x662F; .a &#xFF0C;Windows&#x4E0B;&#x662F; .lib &#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x5176;&#x503C;&#x4E3A;&#x7A7A;&#x3002;</li>
+<li>$&lt; : &#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x540D;&#x5B57;&#x3002;&#x5982;&#x679C;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x662F;&#x4EE5;&#x6A21;&#x5F0F;&#xFF08;&#x5373; % &#xFF09;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x90A3;&#x4E48; $&lt; &#x5C06;&#x662F;&#x7B26;&#x5408;&#x6A21;&#x5F0F;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x6587;&#x4EF6;&#x96C6;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x5176;&#x662F;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x53D6;&#x51FA;&#x6765;&#x7684;&#x3002;</li>
+<li>$? : &#x6240;&#x6709;&#x6BD4;&#x76EE;&#x6807;&#x65B0;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x7684;&#x96C6;&#x5408;&#x3002;&#x4EE5;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x3002;</li>
+<li>$^ : &#x6240;&#x6709;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x7684;&#x96C6;&#x5408;&#x3002;&#x4EE5;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x3002;&#x5982;&#x679C;&#x5728;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D;&#x6709;&#x591A;&#x4E2A;&#x91CD;&#x590D;&#x7684;&#xFF0C;&#x90A3;&#x4E2A;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x4F1A;&#x53BB;&#x9664; &#x91CD;&#x590D;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#xFF0C;&#x53EA;&#x4FDD;&#x7559;&#x4E00;&#x4EFD;&#x3002;</li>
+<li>$+ : &#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x5F88;&#x50CF; $^ &#xFF0C;&#x4E5F;&#x662F;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x7684;&#x96C6;&#x5408;&#x3002;&#x53EA;&#x662F;&#x5B83;&#x4E0D;&#x53BB;&#x9664;&#x91CD;&#x590D;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x3002;</li>
+<li>$<em> : &#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x8868;&#x793A;&#x76EE;&#x6807;&#x6A21;&#x5F0F;&#x4E2D; % &#x53CA;&#x5176;&#x4E4B;&#x524D;&#x7684;&#x90E8;&#x5206;&#x3002;&#x5982;&#x679C;&#x76EE;&#x6807;&#x662F; dir/a.foo.b &#xFF0C;&#x5E76;&#x4E14; &#x76EE;&#x6807;&#x7684;&#x6A21;&#x5F0F;&#x662F; a.%.b &#xFF0C;&#x90A3;&#x4E48;&#xFF0C; $</em> &#x7684;&#x503C;&#x5C31;&#x662F; dir/a.foo &#x3002;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x5BF9;&#x4E8E;&#x6784;&#x9020;&#x6709;&#x5173;&#x8054;&#x7684; &#x6587;&#x4EF6;&#x540D;&#x662F;&#x6BD4;&#x8F83;&#x6709;&#x8F83;&#x3002;&#x5982;&#x679C;&#x76EE;&#x6807;&#x4E2D;&#x6CA1;&#x6709;&#x6A21;&#x5F0F;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x90A3;&#x4E48; $<em> &#x4E5F;&#x5C31;&#x4E0D;&#x80FD;&#x88AB;&#x63A8;&#x5BFC;&#x51FA;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684; &#x540E;&#x7F00;&#x662F;make&#x6240;&#x8BC6;&#x522B;&#x7684;&#xFF0C;&#x90A3;&#x4E48; $</em> &#x5C31;&#x662F;&#x9664;&#x4E86;&#x540E;&#x7F00;&#x7684;&#x90A3;&#x4E00;&#x90E8;&#x5206;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&#x5982;&#x679C;&#x76EE;&#x6807;&#x662F; foo.c &#xFF0C;&#x56E0;&#x4E3A; .c &#x662F;make&#x6240;&#x80FD;&#x8BC6;&#x522B;&#x7684;&#x540E;&#x7F00;&#x540D;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C; $<em> &#x7684;&#x503C;&#x5C31;&#x662F; foo &#x3002;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x662F;GNU make&#x7684;&#xFF0C; &#x5F88;&#x6709;&#x53EF;&#x80FD;&#x4E0D;&#x517C;&#x5BB9;&#x4E8E;&#x5176;&#x5B83;&#x7248;&#x672C;&#x7684;make&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x4F7F;&#x7528; $</em> &#xFF0C;&#x9664;&#x975E;&#x662F;&#x5728;&#x9690;&#x542B;&#x89C4;&#x5219;&#x6216;&#x662F;&#x9759;&#x6001; &#x6A21;&#x5F0F;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x76EE;&#x6807;&#x4E2D;&#x7684;&#x540E;&#x7F00;&#x662F;make&#x6240;&#x4E0D;&#x80FD;&#x8BC6;&#x522B;&#x7684;&#xFF0C;&#x90A3;&#x4E48; $* &#x5C31;&#x662F;&#x7A7A;&#x503C;&#x3002;</li>
+</ul>
+<p>&#x5F53;&#x4F60;&#x5E0C;&#x671B;&#x53EA;&#x5BF9;&#x66F4;&#x65B0;&#x8FC7;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C; $? &#x5728;&#x663E;&#x5F0F;&#x89C4;&#x5219;&#x4E2D;&#x5F88;&#x6709;&#x7528;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x5047;&#x8BBE;&#x6709;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5E93;&#x6587;&#x4EF6; &#x53EB; lib &#xFF0C;&#x5176;&#x7531;&#x5176;&#x5B83;&#x51E0;&#x4E2A;object&#x6587;&#x4EF6;&#x66F4;&#x65B0;&#x3002;&#x90A3;&#x4E48;&#x628A;object&#x6587;&#x4EF6;&#x6253;&#x5305;&#x7684;&#x6BD4;&#x8F83;&#x6709;&#x6548;&#x7387;&#x7684;Makefile&#x89C4;&#x5219;&#x662F;&#xFF1A;</p>
+<pre><code>lib : foo.o bar.o lose.o win.o
+ar r lib $?
+</code></pre><p>&#x5728;&#x4E0A;&#x8FF0;&#x6240;&#x5217;&#x51FA;&#x6765;&#x7684;&#x81EA;&#x52A8;&#x91CF;&#x53D8;&#x91CF;&#x4E2D;&#x3002;&#x56DB;&#x4E2A;&#x53D8;&#x91CF;&#xFF08; $@ &#x3001; $&lt; &#x3001; $% &#x3001; $* &#xFF09;&#x5728;&#x6269;&#x5C55;&#x65F6; &#x53EA;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x800C;&#x53E6;&#x4E09;&#x4E2A;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5217;&#x8868;&#x3002;&#x8FD9;&#x4E03;&#x4E2A;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x8FD8;&#x53EF;&#x4EE5;&#x53D6;&#x5F97;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x540D;&#x6216;&#x662F;&#x5728;&#x5F53;&#x524D; &#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x7B26;&#x5408;&#x6A21;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x642D;&#x914D;&#x4E0A; D &#x6216; F &#x5B57;&#x6837;&#x3002;&#x8FD9;&#x662F;GNU make&#x4E2D;&#x8001;&#x7248;&#x672C;&#x7684;&#x7279;&#x6027;&#xFF0C; &#x5728;&#x65B0;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x51FD;&#x6570; dir &#x6216; notdir &#x5C31;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x4E86;&#x3002; D &#x7684;&#x542B;&#x4E49;&#x5C31;&#x662F;Directory&#xFF0C; &#x5C31;&#x662F;&#x76EE;&#x5F55;&#xFF0C; F &#x7684;&#x542B;&#x4E49;&#x5C31;&#x662F;File&#xFF0C;&#x5C31;&#x662F;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x4E03;&#x4E2A;&#x53D8;&#x91CF;&#x5206;&#x522B;&#x52A0;&#x4E0A; D &#x6216;&#x662F; F &#x7684;&#x542B;&#x4E49;&#xFF1A;</p>
+<ul>
+<li>$(@D)
+&#x8868;&#x793A; $@ &#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#xFF08;&#x4E0D;&#x4EE5;&#x659C;&#x6760;&#x4F5C;&#x4E3A;&#x7ED3;&#x5C3E;&#xFF09;&#xFF0C;&#x5982;&#x679C; $@ &#x503C;&#x662F; dir/foo.o &#xFF0C;&#x90A3;&#x4E48; $(@D) &#x5C31;&#x662F; dir &#xFF0C;&#x800C;&#x5982;&#x679C; $@ &#x4E2D;&#x6CA1;&#x6709;&#x5305;&#x542B;&#x659C;&#x6760;&#x7684;&#x8BDD;&#xFF0C;&#x5176;&#x503C;&#x5C31;&#x662F; . &#xFF08;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF09;&#x3002;</li>
+<li>$(@F)
+&#x8868;&#x793A; $@ &#x7684;&#x6587;&#x4EF6;&#x90E8;&#x5206;&#xFF0C;&#x5982;&#x679C; $@ &#x503C;&#x662F; dir/foo.o &#xFF0C;&#x90A3;&#x4E48; $(@F) &#x5C31;&#x662F; foo.o &#xFF0C; $(@F) &#x76F8;&#x5F53;&#x4E8E;&#x51FD;&#x6570; $(notdir $@) &#x3002;</li>
+<li>$(<em>D), $(</em>F)
+&#x548C;&#x4E0A;&#x9762;&#x6240;&#x8FF0;&#x7684;&#x540C;&#x7406;&#xFF0C;&#x4E5F;&#x662F;&#x53D6;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x548C;&#x6587;&#x4EF6;&#x90E8;&#x5206;&#x3002;&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x90A3;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C; $(<em>D) &#x8FD4;&#x56DE; dir &#xFF0C; &#x800C; $(</em>F) &#x8FD4;&#x56DE; foo$(%D), - $(%F) &#x5206;&#x522B;&#x8868;&#x793A;&#x4E86;&#x51FD;&#x6570;&#x5305;&#x6587;&#x4EF6;&#x6210;&#x5458;&#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x548C;&#x6587;&#x4EF6;&#x90E8;&#x5206;&#x3002;&#x8FD9;&#x5BF9;&#x4E8E;&#x5F62;&#x540C; archive(member) &#x5F62;&#x5F0F;&#x7684;&#x76EE;&#x6807;&#x4E2D;&#x7684; member &#x4E2D;&#x5305;&#x542B;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x76EE;&#x5F55;&#x5F88;&#x6709;&#x7528;&#x3002;</li>
+<li>$(\%D),$(\%F) &#x5206;&#x522B;&#x8868;&#x793A;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x548C;&#x6587;&#x4EF6;&#x90E8;&#x5206;&#x3002;</li>
+<li>$(+D),$(^F) &#x5206;&#x522B;&#x8868;&#x793A;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x548C;&#x6587;&#x4EF6;&#x90E8;&#x5206;&#x3002;&#xFF08;&#x65E0;&#x76F8;&#x540C;&#x7684;&#xFF09;</li>
+<li>$(\%D),$(\?F) &#x5206;&#x522B;&#x8868;&#x793A;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x548C;&#x6587;&#x4EF6;&#x90E8;&#x5206;&#x3002;&#xFF08;&#x53EF;&#x4EE5;&#x6709;&#x76F8;&#x540C;&#x7684;&#xFF09;- $(\?D), $(\?F)
+&#x5206;&#x522B;&#x8868;&#x793A;&#x88AB;&#x66F4;&#x65B0;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x548C;&#x6587;&#x4EF6;&#x90E8;&#x5206;&#x3002;</li>
+</ul>
+<p>&#x6700;&#x540E;&#x60F3;&#x63D0;&#x9192;&#x4E00;&#x4E0B;&#x7684;&#x662F;&#xFF0C;&#x5BF9;&#x4E8E; $&lt; &#xFF0C;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x4EA7;&#x751F;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x9EBB;&#x70E6;&#xFF0C;&#x6211;&#x4EEC;&#x6700;&#x597D;&#x7ED9; $ &#x540E;&#x9762;&#x7684;&#x90A3;&#x4E2A;&#x7279;&#x5B9A; &#x5B57;&#x7B26;&#x90FD;&#x52A0;&#x4E0A;&#x5706;&#x62EC;&#x53F7;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C; $(&lt;) &#x5C31;&#x8981;&#x6BD4; $&lt; &#x8981;&#x597D;&#x4E00;&#x4E9B;&#x3002;</p>
+<p>&#x8FD8;&#x5F97;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x53EA;&#x4F7F;&#x7528;&#x5728;&#x89C4;&#x5219;&#x7684;&#x547D;&#x4EE4;&#x4E2D;&#xFF0C;&#x800C;&#x4E14;&#x4E00;&#x822C;&#x90FD;&#x662F;&#x201C;&#x663E;&#x5F0F;&#x89C4;&#x5219;&#x201D;&#x548C;&#x201C;&#x9759;&#x6001;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x201D; &#xFF08;&#x53C2;&#x89C1;&#x524D;&#x9762;&#x201C;&#x4E66;&#x5199;&#x89C4;&#x5219;&#x201D;&#x4E00;&#x7AE0;&#xFF09;&#x3002;&#x5176;&#x5728;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#x5E76;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x3002;</p>
+<h1 id="&#x6A21;&#x5F0F;&#x7684;&#x5339;&#x914D;">&#x6A21;&#x5F0F;&#x7684;&#x5339;&#x914D;</h1>
+<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x7684;&#x6A21;&#x5F0F;&#x6709;&#x4E00;&#x4E2A;&#x6709;&#x524D;&#x7F00;&#x6216;&#x662F;&#x540E;&#x7F00;&#x7684; % &#xFF0C;&#x6216;&#x662F;&#x6CA1;&#x6709;&#x524D;&#x540E;&#x7F00;&#xFF0C;&#x76F4;&#x63A5;&#x5C31;&#x662F;&#x4E00;&#x4E2A; % &#x3002; &#x56E0;&#x4E3A; % &#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x5B9A;&#x4E49;&#x597D;&#x4E86;&#x7684;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x628A; % &#x6240;&#x5339;&#x914D;&#x7684;&#x5185;&#x5BB9;&#x53EB;&#x505A;&#x201C;&#x830E;&#x201D;&#xFF0C;&#x4F8B;&#x5982; %.c &#x6240;&#x5339;&#x914D;&#x7684;&#x6587;&#x4EF6;&#x201C;test.c&#x201D;&#x4E2D;&#x201C;test&#x201D;&#x5C31;&#x662F;&#x201C;&#x830E;&#x201D;&#x3002;&#x56E0;&#x4E3A;&#x5728;&#x76EE;&#x6807;&#x548C;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x4E2D;&#x540C;&#x65F6;&#x6709; % &#x65F6;&#xFF0C;&#x4F9D;&#x8D56; &#x76EE;&#x6807;&#x7684;&#x201C;&#x830E;&#x201D;&#x4F1A;&#x4F20;&#x7ED9;&#x76EE;&#x6807;&#xFF0C;&#x5F53;&#x505A;&#x76EE;&#x6807;&#x4E2D;&#x7684;&#x201C;&#x830E;&#x201D;&#x3002;</p>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x5305;&#x542B;&#x6709;&#x659C;&#x6760;&#xFF08;&#x5B9E;&#x9645;&#x4E5F;&#x4E0D;&#x7ECF;&#x5E38;&#x5305;&#x542B;&#xFF09;&#x7684;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x8FDB;&#x884C;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x65F6;&#xFF0C;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x4F1A;&#x9996;&#x5148;&#x88AB;&#x79FB;&#x5F00;&#xFF0C; &#x7136;&#x540E;&#x8FDB;&#x884C;&#x5339;&#x914D;&#xFF0C;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x518D;&#x628A;&#x76EE;&#x5F55;&#x52A0;&#x56DE;&#x53BB;&#x3002;&#x5728;&#x8FDB;&#x884C;&#x201C;&#x830E;&#x201D;&#x7684;&#x4F20;&#x9012;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x6B65;&#x9AA4;&#x3002;&#x4F8B;&#x5982;&#x6709;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F; e%t &#xFF0C;&#x6587;&#x4EF6; src/eat &#x5339;&#x914D;&#x4E8E;&#x8BE5;&#x6A21;&#x5F0F;&#xFF0C;&#x4E8E;&#x662F; src/a &#x5C31;&#x662F;&#x5176;&#x201C;&#x830E;&#x201D;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x6A21;&#x5F0F;&#x5B9A;&#x4E49;&#x5728;&#x4F9D;&#x8D56; &#x76EE;&#x6807;&#x4E2D;&#xFF0C;&#x800C;&#x88AB;&#x4F9D;&#x8D56;&#x4E8E;&#x8FD9;&#x4E2A;&#x6A21;&#x5F0F;&#x7684;&#x76EE;&#x6807;&#x4E2D;&#x53C8;&#x6709;&#x4E2A;&#x6A21;&#x5F0F; c%r &#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x76EE;&#x6807;&#x5C31;&#x662F; src/car &#x3002;&#xFF08;&#x201C;&#x830E;&#x201D;&#x88AB;&#x4F20;&#x9012;&#xFF09;</p>
+<h1 id="&#x91CD;&#x8F7D;&#x5185;&#x5EFA;&#x9690;&#x542B;&#x89C4;&#x5219;">&#x91CD;&#x8F7D;&#x5185;&#x5EFA;&#x9690;&#x542B;&#x89C4;&#x5219;</h1>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x91CD;&#x8F7D;&#x5185;&#x5EFA;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF08;&#x6216;&#x662F;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#xFF09;&#xFF0C;&#x4F8B;&#x5982;&#x4F60;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x6784;&#x9020;&#x548C;&#x5185;&#x5EFA;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E0D;&#x540C;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre><code>%.o : %.c
+$(CC) -c $(CPPFLAGS) $(CFLAGS) -D$(date)
+</code></pre><p>&#x4F60;&#x53EF;&#x4EE5;&#x53D6;&#x6D88;&#x5185;&#x5EFA;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x53EA;&#x8981;&#x4E0D;&#x5728;&#x540E;&#x9762;&#x5199;&#x547D;&#x4EE4;&#x5C31;&#x884C;&#x3002;&#x5982;&#xFF1A;</p>
+<pre><code>%.o : %.s
+</code></pre><p>&#x540C;&#x6837;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x5176;&#x5728;&#x9690;&#x542B;&#x89C4;&#x5219;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x5728;&#x54EA;&#x91CC;&#x5199;&#x4E0B;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x3002;&#x671D;&#x524D;&#x7684; &#x4F4D;&#x7F6E;&#x5C31;&#x9760;&#x524D;&#x3002;</p>
+<h1 id="&#x8001;&#x5F0F;&#x98CE;&#x683C;&#x7684;&#x540E;&#x7F00;&#x89C4;&#x5219;">&#x8001;&#x5F0F;&#x98CE;&#x683C;&#x7684;&#x201C;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x201D;</h1>
+<p>&#x540E;&#x7F00;&#x89C4;&#x5219;&#x662F;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x8001;&#x5F0F;&#x7684;&#x5B9A;&#x4E49;&#x9690;&#x542B;&#x89C4;&#x5219;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x4F1A;&#x88AB;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x9010;&#x6B65;&#x5730;&#x53D6;&#x4EE3;&#x3002;&#x56E0;&#x4E3A;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x66F4;&#x5F3A;&#x66F4;&#x6E05;&#x6670;&#x3002; &#x4E3A;&#x4E86;&#x548C;&#x8001;&#x7248;&#x672C;&#x7684;Makefile&#x517C;&#x5BB9;&#xFF0C;GNU make&#x540C;&#x6837;&#x517C;&#x5BB9;&#x4E8E;&#x8FD9;&#x4E9B;&#x4E1C;&#x897F;&#x3002;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;&#x201C;&#x53CC;&#x540E;&#x7F00;&#x201D;&#x548C;&#x201C;&#x5355;&#x540E;&#x7F00;&#x201D;&#x3002;</p>
+<p>&#x53CC;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x5BF9;&#x540E;&#x7F00;&#xFF1A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x540E;&#x7F00;&#x548C;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#xFF08;&#x6E90;&#x6587;&#x4EF6;&#xFF09;&#x7684;&#x540E;&#x7F00;&#x3002;&#x5982; .c.o &#x76F8;&#x5F53;&#x4E8E; %o : %c &#x3002; &#x5355;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x53EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x540E;&#x7F00;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x540E;&#x7F00;&#x3002;&#x5982; .c &#x76F8;&#x5F53;&#x4E8E; % : %.c &#x3002;</p>
+<p>&#x540E;&#x7F00;&#x89C4;&#x5219;&#x4E2D;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x540E;&#x7F00;&#x5E94;&#x8BE5;&#x662F;make&#x6240;&#x8BA4;&#x8BC6;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x540E;&#x7F00;&#x662F;make&#x6240;&#x8BA4;&#x8BC6;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x5C31;&#x662F;&#x5355;&#x540E;&#x7F00;&#x89C4;&#x5219;&#xFF0C; &#x800C;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x8FDE;&#x5728;&#x4E00;&#x8D77;&#x7684;&#x540E;&#x7F00;&#x90FD;&#x88AB;make&#x6240;&#x8BA4;&#x8BC6;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x53CC;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x3002;&#x4F8B;&#x5982;&#xFF1A; .c &#x548C; .o &#x90FD;&#x662F;make&#x6240;&#x77E5;&#x9053;&#x3002; &#x56E0;&#x800C;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x662F; .c.o &#x90A3;&#x4E48;&#x5176;&#x5C31;&#x662F;&#x53CC;&#x540E;&#x7F00;&#x89C4;&#x5219;&#xFF0C;&#x610F;&#x4E49;&#x5C31;&#x662F; .c &#x662F;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x540E;&#x7F00;&#xFF0C; .o &#x662F;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x540E;&#x7F00;&#x3002;&#x5982;&#x4E0B;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>.c.o:
+$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $&lt;
+</code></pre><p>&#x540E;&#x7F00;&#x89C4;&#x5219;&#x4E0D;&#x5141;&#x8BB8;&#x4EFB;&#x4F55;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x5C31;&#x4E0D;&#x662F;&#x540E;&#x7F00;&#x89C4;&#x5219;&#xFF0C;&#x90A3;&#x4E9B;&#x540E;&#x7F00;&#x7EDF;&#x7EDF;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre><code>.c.o: foo.h
+$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $&lt;
+</code></pre><p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6587;&#x4EF6; .c.o &#x4F9D;&#x8D56;&#x4E8E;&#x6587;&#x4EF6; foo.h &#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code>%.o: %.c foo.h
+$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $&lt;
+</code></pre><p>&#x540E;&#x7F00;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x547D;&#x4EE4;&#xFF0C;&#x90A3;&#x662F;&#x6BEB;&#x65E0;&#x610F;&#x4E49;&#x7684;&#x3002;&#x56E0;&#x4E3A;&#x4ED6;&#x4E5F;&#x4E0D;&#x4F1A;&#x79FB;&#x53BB;&#x5185;&#x5EFA;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;&#x3002;
+&#x800C;&#x8981;&#x8BA9;make&#x77E5;&#x9053;&#x4E00;&#x4E9B;&#x7279;&#x5B9A;&#x7684;&#x540E;&#x7F00;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4F2A;&#x76EE;&#x6807; .SUFFIXES &#x6765;&#x5B9A;&#x4E49;&#x6216;&#x662F;&#x5220;&#x9664;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre><code>.SUFFIXES: .hack .win
+</code></pre><p>&#x628A;&#x540E;&#x7F00; .hack &#x548C; .win &#x52A0;&#x5165;&#x540E;&#x7F00;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x672B;&#x5C3E;&#x3002;</p>
+<pre><code>.SUFFIXES: # &#x5220;&#x9664;&#x9ED8;&#x8BA4;&#x7684;&#x540E;&#x7F00;.SUFFIXES: .c .o .h # &#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x540E;&#x7F00;
+</code></pre><p>&#x5148;&#x6E05;&#x9664;&#x9ED8;&#x8BA4;&#x540E;&#x7F00;&#xFF0C;&#x540E;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x540E;&#x7F00;&#x5217;&#x8868;&#x3002;</p>
+<p>make&#x7684;&#x53C2;&#x6570; -r &#x6216; -no-builtin-rules &#x4E5F;&#x4F1A;&#x4F7F;&#x7528;&#x5F97;&#x9ED8;&#x8BA4;&#x7684;&#x540E;&#x7F00;&#x5217;&#x8868;&#x4E3A;&#x7A7A;&#x3002;&#x800C;&#x53D8;&#x91CF; SUFFIXE &#x88AB;&#x7528;&#x6765;&#x5B9A;&#x4E49;&#x9ED8;&#x8BA4;&#x7684;&#x540E;&#x7F00;&#x5217;&#x8868;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7528; .SUFFIXES &#x6765;&#x6539;&#x53D8;&#x540E;&#x7F00;&#x5217;&#x8868;&#xFF0C;&#x4F46;&#x8BF7;&#x4E0D;&#x8981; &#x6539;&#x53D8;&#x53D8;&#x91CF; SUFFIXE &#x7684;&#x503C;&#x3002;</p>
+<h1 id="&#x9690;&#x542B;&#x89C4;&#x5219;&#x641C;&#x7D22;&#x7B97;&#x6CD5;">&#x9690;&#x542B;&#x89C4;&#x5219;&#x641C;&#x7D22;&#x7B97;&#x6CD5;</h1>
+<p>&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x53EB; T&#x3002;&#x4E0B;&#x9762;&#x662F;&#x641C;&#x7D22;&#x76EE;&#x6807;T&#x7684;&#x89C4;&#x5219;&#x7684;&#x7B97;&#x6CD5;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5728;&#x4E0B;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x63D0;&#x5230;&#x540E;&#x7F00;&#x89C4;&#x5219;&#xFF0C; &#x539F;&#x56E0;&#x662F;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x540E;&#x7F00;&#x89C4;&#x5219;&#x5728;Makefile&#x88AB;&#x8F7D;&#x5165;&#x5185;&#x5B58;&#x65F6;&#xFF0C;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x6210;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x3002;&#x5982;&#x679C;&#x76EE;&#x6807;&#x662F; archive(member) &#x7684;&#x51FD;&#x6570;&#x5E93;&#x6587;&#x4EF6;&#x6A21;&#x5F0F;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x7B97;&#x6CD5;&#x4F1A;&#x88AB;&#x8FD0;&#x884C;&#x4E24;&#x6B21;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x662F;&#x627E;&#x76EE;&#x6807;T&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x8FDB;&#x5165;&#x7B2C;&#x4E8C;&#x6B21;&#xFF0C; &#x7B2C;&#x4E8C;&#x6B21;&#x4F1A;&#x628A; member &#x5F53;&#x4F5C;T&#x6765;&#x641C;&#x7D22;&#x3002;</p>
+<ol>
+<li>&#x628A;T&#x7684;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x5206;&#x79BB;&#x51FA;&#x6765;&#x3002;&#x53EB;D&#xFF0C;&#x800C;&#x5269;&#x4F59;&#x90E8;&#x5206;&#x53EB;N&#x3002;&#xFF08;&#x5982;&#xFF1A;&#x5982;&#x679C;T&#x662F; src/foo.o &#xFF0C;&#x90A3;&#x4E48;&#xFF0C;D&#x5C31;&#x662F; src/ &#xFF0C;N&#x5C31;&#x662F; foo.o &#xFF09;</li>
+<li>&#x521B;&#x5EFA;&#x6240;&#x6709;&#x5339;&#x914D;&#x4E8E;T&#x6216;&#x662F;N&#x7684;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x5217;&#x8868;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5728;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x5217;&#x8868;&#x4E2D;&#x6709;&#x5339;&#x914D;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x5982; % &#xFF0C;&#x90A3;&#x4E48;&#x4ECE;&#x5217;&#x8868;&#x4E2D;&#x79FB;&#x9664;&#x5176;&#x5B83;&#x7684;&#x6A21;&#x5F0F;&#x3002;</li>
+<li>&#x79FB;&#x9664;&#x5217;&#x8868;&#x4E2D;&#x6CA1;&#x6709;&#x547D;&#x4EE4;&#x7684;&#x89C4;&#x5219;&#x3002;</li>
+<li><p>&#x5BF9;&#x4E8E;&#x7B2C;&#x4E00;&#x4E2A;&#x5728;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#xFF1A;</p>
+</li>
+<li><p>&#x63A8;&#x5BFC;&#x5176;&#x201C;&#x830E;&#x201D;S&#xFF0C;S&#x5E94;&#x8BE5;&#x662F;T&#x6216;&#x662F;N&#x5339;&#x914D;&#x4E8E;&#x6A21;&#x5F0F;&#x4E2D; % &#x975E;&#x7A7A;&#x7684;&#x90E8;&#x5206;&#x3002;</p>
+</li>
+<li>&#x8BA1;&#x7B97;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x3002;&#x628A;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x4E2D;&#x7684; % &#x90FD;&#x66FF;&#x6362;&#x6210;&#x201C;&#x830E;&#x201D;S&#x3002;&#x5982;&#x679C;&#x76EE;&#x6807;&#x6A21;&#x5F0F;&#x4E2D;&#x6CA1;&#x6709;&#x5305;&#x542B;&#x659C;&#x6846;&#x5B57;&#x7B26;&#xFF0C; &#x800C;&#x628A;D&#x52A0;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x7684;&#x5F00;&#x5934;&#x3002;</li>
+<li>&#x6D4B;&#x8BD5;&#x662F;&#x5426;&#x6240;&#x6709;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x90FD;&#x5B58;&#x5728;&#x6216;&#x662F;&#x7406;&#x5F53;&#x5B58;&#x5728;&#x3002;&#xFF08;&#x5982;&#x679C;&#x6709;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x88AB;&#x5B9A;&#x4E49;&#x6210;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF0C; &#x6216;&#x8005;&#x662F;&#x4E00;&#x4E2A;&#x663E;&#x5F0F;&#x89C4;&#x5219;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5C31;&#x53EB;&#x201C;&#x7406;&#x5F53;&#x5B58;&#x5728;&#x201D;&#xFF09;</li>
+<li>&#x5982;&#x679C;&#x6240;&#x6709;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x5B58;&#x5728;&#x6216;&#x662F;&#x7406;&#x5F53;&#x5B58;&#x5728;&#xFF0C;&#x6216;&#x662F;&#x5C31;&#x6CA1;&#x6709;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x6761;&#x89C4;&#x5219;&#x5C06;&#x88AB;&#x91C7;&#x7528;&#xFF0C;&#x9000;&#x51FA;&#x8BE5;&#x7B97;&#x6CD5;&#x3002;</li>
+<li><p>&#x5982;&#x679C;&#x7ECF;&#x8FC7;&#x7B2C;5&#x6B65;&#xFF0C;&#x6CA1;&#x6709;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x88AB;&#x627E;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x505A;&#x66F4;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x641C;&#x7D22;&#x3002;&#x5BF9;&#x4E8E;&#x5B58;&#x5728;&#x4E8E;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#xFF1A;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x89C4;&#x5219;&#x662F;&#x7EC8;&#x6B62;&#x89C4;&#x5219;&#xFF0C;&#x90A3;&#x5C31;&#x5FFD;&#x7565;&#x5B83;&#xFF0C;&#x7EE7;&#x7EED;&#x4E0B;&#x4E00;&#x6761;&#x6A21;&#x5F0F;&#x89C4;&#x5219;&#x3002;</p>
+</li>
+<li>&#x8BA1;&#x7B97;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x3002;&#xFF08;&#x540C;&#x7B2C;5&#x6B65;&#xFF09;</li>
+<li>&#x6D4B;&#x8BD5;&#x6240;&#x6709;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#x6216;&#x662F;&#x7406;&#x5F53;&#x5B58;&#x5728;&#x3002;</li>
+<li>&#x5BF9;&#x4E8E;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#xFF0C;&#x9012;&#x5F52;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x7B97;&#x6CD5;&#x67E5;&#x627E;&#x4ED6;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x88AB;&#x9690;&#x542B;&#x89C4;&#x5219;&#x627E;&#x5230;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6240;&#x6709;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x5B58;&#x5728;&#x6216;&#x662F;&#x7406;&#x5F53;&#x5B58;&#x5728;&#xFF0C;&#x6216;&#x662F;&#x5C31;&#x6839;&#x672C;&#x6CA1;&#x6709;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x6761;&#x89C4;&#x5219;&#x88AB;&#x91C7;&#x7528;&#xFF0C;&#x9000;&#x51FA;&#x8BE5;&#x7B97;&#x6CD5;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x9690;&#x542B;&#x89C4;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF0C;&#x67E5;&#x770B; .DEFAULT &#x89C4;&#x5219;&#xFF0C;&#x5982;&#x679C;&#x6709;&#xFF0C;&#x91C7;&#x7528;&#xFF0C;&#x628A; .DEFAULT &#x7684;&#x547D;&#x4EE4;&#x7ED9;T&#x4F7F;&#x7528;&#x3002;</li>
+</ol>
+<p>&#x4E00;&#x65E6;&#x89C4;&#x5219;&#x88AB;&#x627E;&#x5230;&#xFF0C;&#x5C31;&#x4F1A;&#x6267;&#x884C;&#x5176;&#x76F8;&#x5F53;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x800C;&#x6B64;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x624D;&#x4F1A;&#x751F;&#x6210;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: make 的运行">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="section2.html" class="navigation navigation-next " aria-label="Next page: 使用make更新函数库文件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"隐含规则","level":"1.9","depth":1,"next":{"title":"使用make更新函数库文件","level":"1.10","depth":1,"path":"chapter3/section2.md","ref":"chapter3/section2.md","articles":[]},"previous":{"title":"make 的运行","level":"1.8","depth":1,"path":"chapter3/README.md","ref":"chapter3/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter3/section1.md","mtime":"2020-03-31T10:24:29.154Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-31T10:28:16.511Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
